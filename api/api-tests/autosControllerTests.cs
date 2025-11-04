@@ -23,7 +23,7 @@ namespace api_tests
 
         // Prueba que el método GET /autos/brands retorna un resultado de tipo OK (HTTP 200).
         [Fact]
-        public async Task GetMarcas_ShouldReturnOkResult()
+        public async Task GetBrands_ShouldReturnOkResult()
         {
             using var context = _dbContextFactory.CreateContext();
             var controller = new autosController(context);
@@ -33,7 +33,7 @@ namespace api_tests
 
         // Prueba que el método GET /autos/brands retorna el número correcto de elementos.
         [Fact]
-        public async Task GetMarcas_ShouldReturnCorrectCount()
+        public async Task GetBrands_ShouldReturnCorrectCount()
         {
             using var context = _dbContextFactory.CreateContext();
             var controller = new autosController(context);
@@ -48,7 +48,7 @@ namespace api_tests
 
         // Prueba que los datos retornados por el endpoint son los datos semilla correctos.
         [Fact]
-        public async Task GetMarcas_ShouldReturnAllSeedData()
+        public async Task GetBrands_ShouldReturnAllSeedData()
         {
             using var context = _dbContextFactory.CreateContext();
             var controller = new autosController(context);
