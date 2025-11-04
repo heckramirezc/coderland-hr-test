@@ -26,7 +26,7 @@ const initialState: ListState = {
   error: null,
 };
 
-const listadoSlice = createSlice({
+const listSlice = createSlice({
   name: 'list',
   initialState,
   reducers: {},
@@ -48,4 +48,4 @@ const listadoSlice = createSlice({
   },
 });
 
-export default listadoSlice.reducer;
+export default listSlice.reducer;
