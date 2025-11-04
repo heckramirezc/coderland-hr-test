@@ -1,15 +1,33 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using api.Data;
+using Microsoft.EntityFrameworkCore;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetValue<string>("CONNECTION_STRING")
+                       ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new InvalidOperationException("La cadena de conexión 'DefaultConnection' o 'CONNECTION_STRING' no fue encontrada.");
+}
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+
+    options.UseNpgsql(connectionString);
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -23,4 +41,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
