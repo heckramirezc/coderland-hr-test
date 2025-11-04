@@ -18,12 +18,12 @@ const AppNavigator: React.FC = () => {
       <Stack.Screen 
         name="Tasks" 
         component={TasksScreen} 
-        options={{ title: 'Tasks' }} 
+        options={{ title: '' }} 
       />
       <Stack.Screen 
         name="List" 
         component={ListScreen} 
-        options={{ title: 'Listado' }} 
+        options={{ title: '' }} 
       />
     </Stack.Navigator>
   );
