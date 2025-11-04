@@ -5,13 +5,14 @@ import {RootStack } from '../../types/navigation';
 
 type Props = NativeStackScreenProps<RootStack, 'Home'>;
 
-const HomeScreen: React.FC<Props> = () => {
+const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bienvenido</Text>
       <View style={styles.buttonContainer}>
         <Button
           title="Tasks"
+          onPress={() => navigation.navigate('Tasks')}
         />
       </View>
       <View style={styles.buttonContainer}>
