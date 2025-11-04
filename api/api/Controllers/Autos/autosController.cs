@@ -18,7 +18,7 @@ namespace api.Controllers.Autos
         }
 
         [HttpGet("brands")]
-        public async Task<ActionResult<IEnumerable<MarcaAuto>>> GetAll()
+        public async Task<ActionResult<IEnumerable<MarcaAuto>>> getAllBrands()
         {
             var brands = await _db.MarcasAutos.AsNoTracking().ToListAsync();
             return Ok(brands);
