@@ -18,6 +18,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         <Button
           title="Listado"
+          onPress={() => navigation.navigate('List')}
         />
       </View>
     </View>

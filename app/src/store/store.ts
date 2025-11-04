@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import tasksReducer from './tasksSlice';
+import listReducer from './listSlice';
 
 export const store = configureStore({
   reducer: {
     tasks: tasksReducer,
+    list: listReducer,
   },
 });
 
