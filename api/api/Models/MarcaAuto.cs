@@ -6,8 +6,14 @@ namespace api.Models
 {
     public class MarcaAuto
     {
+        [Key]
         public int Id { get; set; }
-        public string Nombre { get; set; } = null!;
-        public string PaisOrigen { get; set; } = null!;
+
+        [Required]
+        [MaxLength(100)]
+        public string Nombre { get; set; } = string.Empty;
+
+        [MaxLength(100)]
+        public string? PaisOrigen { get; set; }
     }
 }
