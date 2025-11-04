@@ -33,10 +33,10 @@ namespace api_tests
         {
             return new List<MarcaAuto>
             {
-                new MarcaAuto { Id = 1, Nombre = "Toyota", PaisOrigen = "Japón"},
-                new MarcaAuto { Id = 2, Nombre = "Ford", PaisOrigen = "Estados Unidos"},
-                new MarcaAuto { Id = 3, Nombre = "BMW", PaisOrigen = "Alemania"},
-                new MarcaAuto { Id = 4, Nombre = "Hyundai", PaisOrigen = "Corea del Sur"}
+                new MarcaAuto { Id = 1, Nombre = "Toyota", PaisOrigen = "Japón" },
+                new MarcaAuto { Id = 2, Nombre = "Ford", PaisOrigen = "Estados Unidos" },
+                new MarcaAuto { Id = 3, Nombre = "BMW", PaisOrigen = "Alemania" },
+                new MarcaAuto { Id = 4, Nombre = "Honda", PaisOrigen = "Japón" }
             };
         }
     }
