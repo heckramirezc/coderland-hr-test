@@ -20,7 +20,7 @@ namespace api.Controllers.Autos
         [HttpGet("brands")]
         public async Task<ActionResult<IEnumerable<MarcaAuto>>> GetAll()
         {
-            var brands = await _db.MarcasAutos.ToListAsync();
+            var brands = await _db.MarcasAutos.AsNoTracking().ToListAsync();
             return Ok(brands);
         }
     }
